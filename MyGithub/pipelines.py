@@ -4,9 +4,11 @@
 #
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: https://doc.scrapy.org/en/latest/topics/item-pipeline.html
+import scrapy
+from scrapy.pipelines.images import ImagesPipeline
 
 
-class MygithubPipeline(object):
-    def process_item(self, item, spider):
-        print(item)
-        return item
+class MygithubPipeline(ImagesPipeline):
+    def get_media_requests(self, item, spider):
+            print(item['avatar'])
+            yield scrapy.Request(item['avatar'])

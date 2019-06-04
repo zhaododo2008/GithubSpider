@@ -30,6 +30,14 @@ RETRY_ENABLED = False
 DOWNLOAD_DELAY = 2
 COOKIES_ENABLED = False
 
+
+#图片存储位置
+IMAGES_STORE = './image'
+#启动图片下载中间件
+ITEM_PIPELINES = {
+   'MyGithub.pipelines.MygithubPipeline': 300
+}
+
 # Configure a delay for requests for the same website (default: 0)
 # See https://doc.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
