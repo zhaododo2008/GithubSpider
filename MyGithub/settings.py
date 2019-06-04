@@ -25,7 +25,10 @@ ROBOTSTXT_OBEY = True
 FEED_EXPORT_ENCODING = 'utf-8'
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-#CONCURRENT_REQUESTS = 32
+CONCURRENT_REQUESTS = 2
+RETRY_ENABLED = False
+DOWNLOAD_DELAY = 2
+COOKIES_ENABLED = False
 
 # Configure a delay for requests for the same website (default: 0)
 # See https://doc.scrapy.org/en/latest/topics/settings.html#download-delay

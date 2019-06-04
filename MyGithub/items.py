@@ -12,6 +12,7 @@ class MygithubItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
 
+    id = scrapy.Field()  # 唯一编码
     author = scrapy.Field()  # 作者
     avatar = scrapy.Field()  # 头像
     desc = scrapy.Field()  # 简述

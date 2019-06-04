@@ -23,9 +23,19 @@ class GithubSpider(scrapy.Spider):
         """
 
         func = self.parse_resultcnt
+        urls = self.gen_urls()
 
-        for url in self.start_urls:
+        for url in urls:
             yield scrapy.Request(url=url, headers=self.headers, callback=func)
+
+    def gen_urls(self, q=None, start=1, stop=10):
+
+        q = '%E7%88%AC%E8%99%AB%20java'
+
+        urls = ['https://api.github.com/search/repositories?q={q}&page={p}&per_page=30'.
+                    format(p=p, q=q)
+                for p in range(start, stop)]
+        return urls
 
 
 
@@ -39,6 +49,7 @@ class GithubSpider(scrapy.Spider):
         for item in items:
             rep = MygithubItem()
             owner = item['owner']
+            rep['id'] = item['id']
             rep['author'] = item['full_name']
             rep['desc'] = item['description']
             rep['link'] = item['html_url']
