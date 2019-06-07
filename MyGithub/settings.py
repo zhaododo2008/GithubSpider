@@ -35,7 +35,8 @@ COOKIES_ENABLED = False
 IMAGES_STORE = './image'
 #启动图片下载中间件
 ITEM_PIPELINES = {
-   'MyGithub.pipelines.MygithubPipeline': 300
+   #'MyGithub.pipelines.MygithubPipeline': 300,
+   'MyGithub.pipelines.MysqlPipeline': 400
 }
 
 # Configure a delay for requests for the same website (default: 0)

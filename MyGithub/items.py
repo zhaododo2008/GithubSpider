@@ -17,5 +17,6 @@ class MygithubItem(scrapy.Item):
     avatar = scrapy.Field()  # 头像
     desc = scrapy.Field()  # 简述
     link = scrapy.Field()  # 链接
+    language = scrapy.Field()  # 语言
     posttime = scrapy.Field()  # 发布时间
     pass

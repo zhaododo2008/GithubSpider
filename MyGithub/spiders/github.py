@@ -54,6 +54,8 @@ class GithubSpider(scrapy.Spider):
             rep['desc'] = item['description']
             rep['link'] = item['html_url']
             rep['avatar'] = owner.get('avatar_url')
+            rep['posttime'] = item['pushed_at']
+            rep['language'] = item['language']
             reps.append(rep)
             yield rep
 
